@@ -94,7 +94,7 @@ git checkout -b feature/add-ai-dlc-workflow
 ### 2. Add the submodule
 
 ```bash
-git submodule add git@bitbucket.org:clearlinkit/ai-dlc-rules.git .ai-dlc
+git submodule add git@bitbucket.org:COMPANYit/ai-dlc-rules.git .ai-dlc
 git submodule update --init --recursive
 ```
 
@@ -151,7 +151,7 @@ git submodule update --init --recursive
 > *"Using AI-DLC, [describe what you want to build]"*
 
 **Jira-driven — paste a ticket URL and let the ticket be the requirements:**
-> *"Using AI-DLC, implement https://clearlink.atlassian.net/browse/PROJECT-123"*
+> *"Using AI-DLC, implement https://COMPANY.atlassian.net/browse/PROJECT-123"*
 
 Claude Code will activate the workflow and guide you through structured phases automatically. When a Jira URL is provided, it fetches the ticket via the Atlassian MCP, maps the acceptance criteria to the Inception phase, and skips the manual requirements questionnaire.
 
@@ -216,7 +216,7 @@ Then restart `claude` and verify with `/mcp` — you should see `atlassian` list
 ### Trigger phrase
 
 ```
-Using AI-DLC, implement https://clearlink.atlassian.net/browse/PROJECT-123
+Using AI-DLC, implement https://COMPANY.atlassian.net/browse/PROJECT-123
 ```
 
 ### Enabling the Jira extension in an existing project (e.g. PROJECT)
@@ -242,7 +242,7 @@ Restart `claude` and run `/mcp` to confirm `atlassian` is listed.
 
 In Claude Code inside your PROJECT project:
 ```
-Using AI-DLC, implement https://clearlink.atlassian.net/browse/PROJECT-123
+Using AI-DLC, implement https://COMPANY.atlassian.net/browse/PROJECT-123
 ```
 Claude will fetch the ticket, map it to the Inception phase, confirm its understanding, then proceed into design and planning.
 

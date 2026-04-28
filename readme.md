@@ -151,7 +151,7 @@ git submodule update --init --recursive
 > *"Using AI-DLC, [describe what you want to build]"*
 
 **Jira-driven — paste a ticket URL and let the ticket be the requirements:**
-> *"Using AI-DLC, implement https://clearlink.atlassian.net/browse/FUSE-123"*
+> *"Using AI-DLC, implement https://clearlink.atlassian.net/browse/PROJECT-123"*
 
 Claude Code will activate the workflow and guide you through structured phases automatically. When a Jira URL is provided, it fetches the ticket via the Atlassian MCP, maps the acceptance criteria to the Inception phase, and skips the manual requirements questionnaire.
 
@@ -210,22 +210,22 @@ Then restart `claude` and verify with `/mcp` — you should see `atlassian` list
 2. Claude fetches the ticket via the Atlassian MCP
 3. It maps the ticket Summary and Acceptance Criteria to AI-DLC's Inception phase
 4. It confirms its understanding before writing any code
-5. All generated artifacts in `aidlc-docs/` are prefixed with the ticket ID (e.g. `FUSE-123-design.md`)
-6. A branch name is suggested automatically (e.g. `feature/FUSE-123-description`)
+5. All generated artifacts in `aidlc-docs/` are prefixed with the ticket ID (e.g. `PROJECT-123-design.md`)
+6. A branch name is suggested automatically (e.g. `feature/PROJECT-123-description`)
 
 ### Trigger phrase
 
 ```
-Using AI-DLC, implement https://clearlink.atlassian.net/browse/FUSE-123
+Using AI-DLC, implement https://clearlink.atlassian.net/browse/PROJECT-123
 ```
 
-### Enabling the Jira extension in an existing project (e.g. fuse)
+### Enabling the Jira extension in an existing project (e.g. PROJECT)
 
 If you already have a project set up with this submodule, you just need to pull the latest rules — the Jira extension comes in automatically.
 
 **Step 1 — Pull the latest rules into your project**
 ```bash
-cd /path/to/fuse
+cd /path/to/PROJECT
 git submodule update --remote .ai-dlc
 git add .ai-dlc
 git commit -m "Update AI-DLC rules — add Jira extension"
@@ -238,11 +238,11 @@ claude mcp add --transport sse atlassian https://mcp.atlassian.com/v1/sse
 ```
 Restart `claude` and run `/mcp` to confirm `atlassian` is listed.
 
-**Step 3 — Test it in fuse**
+**Step 3 — Test it in PROJECT**
 
-In Claude Code inside your fuse project:
+In Claude Code inside your PROJECT project:
 ```
-Using AI-DLC, implement https://clearlink.atlassian.net/browse/FUSE-123
+Using AI-DLC, implement https://clearlink.atlassian.net/browse/PROJECT-123
 ```
 Claude will fetch the ticket, map it to the Inception phase, confirm its understanding, then proceed into design and planning.
 
